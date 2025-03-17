@@ -1,0 +1,89 @@
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Student {
+    String name;
+    int marks;
+
+    public Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + marks + "%)";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a list of students
+        List<Student> students = Arrays.asList(
+            new Student("Alice", 82),
+            new Student("Bob", 60),
+            new Student("Charlie", 90),
+            new Student("David", 74),
+            new Student("Eve", 88)
+        );
+
+        // Use streams to filter, sort, and display the names of students
+        students.stream()
+            .filter(s -> s.getMarks() > 75) // Filter students with marks above 75
+            .sorted(Comparator.comparingInt(Student::getMarks).reversed()) // Sort by marks in descending order
+            .forEach(s -> System.out.println(s.getName())); // Display names of students
+    }
+}
+2//
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Student {
+    String name;
+    int marks;
+
+    public Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + marks + "%)";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a list of students
+        List<Student> students = Arrays.asList(
+            new Student("Alice", 82),
+            new Student("Bob", 60),
+            new Student("Charlie", 90),
+            new Student("David", 74),
+            new Student("Eve", 88)
+        );
+
+        // Use streams to filter, sort, and display the names of students
+        students.stream()
+            .filter(s -> s.getMarks() > 75) // Filter students with marks above 75
+            .sorted(Comparator.comparingInt(Student::getMarks).reversed()) // Sort by marks in descending order
+            .forEach(s -> System.out.println(s.getName())); // Display names of students
+    }
+}
